@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import Hamburger from 'hamburger-react';
 import logoImg from '../../assets/images/logo.png';
 import Image from 'next/image';
-import { IoLocation } from 'react-icons/io5';
+// import { BiMobile } from 'react-icons/bi';
+import { IoLocation, IoCall } from 'react-icons/io5';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,6 @@ function Navbar() {
         <a>About</a>
       </li>
       <li>
-        <a>Contact</a>
-      </li>
-      <li>
         <a>Services</a>
       </li>
       <li>
@@ -28,6 +26,9 @@ function Navbar() {
       </li>
       <li>
         <a>Blogs</a>
+      </li>
+      <li>
+        <a>Contacts</a>
       </li>
     </>
   );
@@ -43,39 +44,54 @@ function Navbar() {
           </h1>
         </div>
       </div>
-      <div className='navbar-center'>
-        <div className='hidden lg:flex'>
-          <ul className='menu menu-horizontal px-1'>
-            <li>
-              <a>
-                <IoLocation className='mr-1' />{' '}
-                <span className='text-sm'>
-                  310 Razzak Complex, SSK Road, Feni
-                </span>
-              </a>
-            </li>
-            {menuItems}
-          </ul>
-        </div>
+      <div className='navbar-center hidden lg:flex'>
+        {/* <div className='hidden lg:flex'> */}
+        <ul className='menu menu-horizontal px-1'>
+          <li>
+            <a>
+              <IoLocation className='mr-1' />
+              <span className='text-sm'>
+                310 Razzak Complex, SSK Road, Feni
+              </span>
+            </a>
+          </li>
+          {menuItems}
+        </ul>
+        {/* </div> */}
       </div>
       <div className='navbar-end'>
-        <a className='btn mr-2'>Button</a>
+        <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 hidden lg:flex'>
+          <IoCall /> <span>+880 183 227 8260</span>
+        </button>
+
+        <div className='avatar mx-2'>
+          <div className='w-10 h-10 rounded-full ring ring-main ring-offset-base-100 ring-offset-2'>
+            <img src={logoImg.src} alt='avatar' />
+          </div>
+        </div>
         <div className='dropdown dropdown-bottom dropdown-end lg:hidden'>
-          <Hamburger
-            hideOutline={false}
-            distance='sm'
-            // color='#4FD1C5'
-            onToggle={(toggled) => {
-              if (toggled) {
-                setIsOpen(true);
-              } else {
-                setIsOpen(false);
-              }
-            }}
-            // className='lg:hidden'
-          />
+          <label tabIndex={-1}>
+            <Hamburger
+              hideOutline={false}
+              size={20}
+              distance='sm'
+              // color='#4FD1C5'
+              onToggle={(toggled) => {
+                if (toggled) {
+                  setIsOpen(true);
+                } else {
+                  setIsOpen(false);
+                }
+              }}
+              tabIndex={-1}
+            />
+          </label>
+
           {isOpen && (
-            <ul className='menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'>
+            <ul
+              tabIndex={-1}
+              className='menu menu-md dropdown-content mt-3 ml-4 p-3 box-border shadow bg-base-100 rounded-box w-screen h-screen'
+            >
               {menuItems}
             </ul>
           )}
