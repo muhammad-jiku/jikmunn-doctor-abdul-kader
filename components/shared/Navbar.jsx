@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Hamburger from 'hamburger-react';
 import logoImg from '../../assets/images/logo.png';
 import Image from 'next/image';
+import { IoLocation } from 'react-icons/io5';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,13 +12,22 @@ function Navbar() {
   const menuItems = (
     <>
       <li>
-        <a>Item 1</a>
+        <a>Home</a>
       </li>
       <li>
-        <a>Item 2</a>
+        <a>About</a>
       </li>
       <li>
-        <a>Item 3</a>
+        <a>Contact</a>
+      </li>
+      <li>
+        <a>Services</a>
+      </li>
+      <li>
+        <a>Prices</a>
+      </li>
+      <li>
+        <a>Blogs</a>
       </li>
     </>
   );
@@ -33,10 +43,22 @@ function Navbar() {
           </h1>
         </div>
       </div>
-      <div className='navbar-end'>
+      <div className='navbar-center'>
         <div className='hidden lg:flex'>
-          <ul className='menu menu-horizontal px-1'>{menuItems}</ul>
+          <ul className='menu menu-horizontal px-1'>
+            <li>
+              <a>
+                <IoLocation className='mr-1' />{' '}
+                <span className='text-sm'>
+                  310 Razzak Complex, SSK Road, Feni
+                </span>
+              </a>
+            </li>
+            {menuItems}
+          </ul>
         </div>
+      </div>
+      <div className='navbar-end'>
         <a className='btn mr-2'>Button</a>
         <div className='dropdown dropdown-bottom dropdown-end lg:hidden'>
           <Hamburger
