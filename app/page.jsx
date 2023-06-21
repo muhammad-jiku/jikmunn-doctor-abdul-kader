@@ -1,5 +1,9 @@
-import Image from 'next/image';
+import { HomeSection } from '@/components';
 
 export default function Home() {
-  return <h1>Hello mr.developer!</h1>;
+  return (
+    <>
+      <HomeSection />
+    </>
+  );
 }

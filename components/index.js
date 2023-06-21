@@ -1,1 +1,2 @@
-export { default as Navbar } from './shared/Navbar';
+export { default as Navbar } from './Shared/Navbar';
+export { default as HomeSection } from './Home/HomeSection';
