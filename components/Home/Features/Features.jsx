@@ -28,7 +28,7 @@ function Features() {
   ];
 
   return (
-    <div className='container mx-auto p-3 my-4'>
+    <div className='container mx-auto my-10 p-3 min-h-screen'>
       <div className='flex flex-col md:flex-row justify-center md:justify-around my-6'>
         {data.map((feature, index) => (
           <FeaturesCard key={index} feature={feature} />
