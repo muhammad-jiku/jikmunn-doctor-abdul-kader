@@ -2,13 +2,13 @@
 
 import React from 'react';
 import Banner from './Banner/Banner';
-import Services from './Services/Services';
+import Features from './Features/Features';
 
 function HomeSection() {
   return (
     <>
       <Banner />
-      <Services />
+      <Features />
     </>
   );
 }

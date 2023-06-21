@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import ServicesCard from './ServicesCard';
+import FeaturesCard from './FeaturesCard';
 import medicalTreatmentImg from '../../../assets/images/treatment.png';
 import emergencyHelpImg from '../../../assets/images/emergency.png';
 import regularExaminationImg from '../../../assets/images/examination.png';
 
-function Services() {
+function Features() {
   const data = [
     {
       name: 'Medical Treatment',
@@ -30,12 +30,12 @@ function Services() {
   return (
     <div className='container mx-auto p-3 my-4'>
       <div className='flex flex-col md:flex-row justify-center md:justify-around my-6'>
-        {data.map((service, index) => (
-          <ServicesCard key={index} service={service} />
+        {data.map((feature, index) => (
+          <FeaturesCard key={index} feature={feature} />
         ))}
       </div>
     </div>
   );
 }
 
-export default Services;
+export default Features;
