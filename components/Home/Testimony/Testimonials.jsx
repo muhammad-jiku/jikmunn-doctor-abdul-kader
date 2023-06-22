@@ -2,20 +2,20 @@
 
 import React from 'react';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
-import bpCheckingImg from '../../../assets/images/bpCheckinggg.jpg';
+import bpCheckingImg from '../../../assets/images/bpCheckingg.jpeg';
+// import bpCheckingImg from '../../../assets/images/bpCheckinggg.jpg';
+// import bpCheckingImg from '../../../assets/images/bpCheckingBlur.jpg';
 import TestimonialsCard from './TestimonialsCard';
 
 function Testimonials() {
   return (
-    // <div className={`hero min-h-screen w-full flex flex-col mt-80`}>
-    <div className='hero min-h-screen w-full mt-80 p-10 mx-4 mb-4 flex flex-col lg:flex-row justify-center lg:justify-around items-center'>
+    <div className='hero min-h-screen w-full container mx-auto mb-4 mt-96 sm:mt-80 lg:mt-60 p-4 lg:p-10 flex flex-col justify-center items-center'>
       <div
         className='min-h-screen w-full bg-cover bg-no-repeat flex flex-col container m-auto p-4 box-border'
         style={{ backgroundImage: `url(${bpCheckingImg?.src})` }}
       >
-        {/*  */}
         <div className='flex flex-col justify-start'>
-          <h2 className='text-3xl lg:text-5xl text-main font-bold font-lobster my-4 tracking-widest'>
+          <h2 className='text-3xl lg:text-5xl text-main font-bold font-lobster my-8 tracking-widest'>
             Testimonials
           </h2>
           <hr className='w-1/2 mb-2 border-2 border-main' />
@@ -27,7 +27,6 @@ function Testimonials() {
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 

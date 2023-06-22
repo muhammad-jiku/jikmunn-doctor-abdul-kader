@@ -50,13 +50,8 @@ function TestimonialsCard() {
         }}
         // navigation={true}
         modules={[Autoplay, Parallax, Pagination, Navigation]}
-        className='mySwiper'
       >
-        <div
-          slot='container-start'
-          //   className='parallax-bg'
-          data-swiper-parallax='-23%'
-        ></div>
+        <div slot='container-start' data-swiper-parallax='-23%'></div>
         {data?.map((testimonial, i) => (
           <SwiperSlide key={i}>
             <div className='p-4' data-swiper-parallax='-100'>
