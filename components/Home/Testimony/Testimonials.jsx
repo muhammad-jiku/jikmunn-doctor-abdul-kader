@@ -3,6 +3,7 @@
 import React from 'react';
 import { GiStethoscope } from 'react-icons/gi';
 import activeFamilyImg from '../../../assets/images/activeFamilyMirror.jpg';
+import CountUp from 'react-countup';
 
 function Testimonials() {
   return (
@@ -40,13 +41,13 @@ function Testimonials() {
               <div className='py-3 flex justify-around'>
                 <div className='mx-2'>
                   <h3 className='text-xl lg:text-4xl font-bold text-three'>
-                    600+
+                    <CountUp end={1000} duration={5} />+
                   </h3>
                   <h3 className='text-sm font-bold'>Satisfied Patients</h3>
                 </div>
                 <div className='mx-2'>
                   <h3 className='text-xl lg:text-4xl font-bold text-three'>
-                    300+
+                    <CountUp end={300} duration={5} />+
                   </h3>
                   <h3 className='text-sm font-bold'>Families Trust</h3>
                 </div>
