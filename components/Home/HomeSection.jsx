@@ -3,14 +3,14 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
-import Testimony from './Testimony/Testimony';
+import About from './About/About';
 
 function HomeSection() {
   return (
     <>
       <Banner />
       <Features />
-      <Testimony />
+      <About />
     </>
   );
 }
