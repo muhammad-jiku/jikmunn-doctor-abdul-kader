@@ -4,6 +4,7 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import About from './About/About';
+import Testimonials from './Testimony/Testimonials';
 
 function HomeSection() {
   return (
@@ -11,6 +12,7 @@ function HomeSection() {
       <Banner />
       <Features />
       <About />
+      <Testimonials />
     </>
   );
 }

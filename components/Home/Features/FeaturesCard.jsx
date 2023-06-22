@@ -15,7 +15,7 @@ function FeaturesCard({ feature }) {
         <h2 className='text-xl md:text-2xl text-center my-2'>
           {feature?.name}
         </h2>{' '}
-        <hr className='w-1/2 mb-2   border-slate-300' />
+        <hr className='w-1/2 mb-2 border-slate-300' />
         <div className='py-2 box-border'>
           <p className='text-gray text-justify my-2 text-sm md:text-lg'>
             {feature?.description}
