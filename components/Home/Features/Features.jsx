@@ -29,7 +29,7 @@ function Features() {
 
   return (
     <div className='container mx-auto my-10 p-3 min-h-screen'>
-      <div className='flex flex-col md:flex-row justify-center md:justify-around my-6'>
+      <div className='flex flex-col lg:flex-row justify-center md:justify-around my-6'>
         {data.map((feature, index) => (
           <FeaturesCard key={index} feature={feature} />
         ))}

@@ -5,13 +5,18 @@ import { BsArrowRight } from 'react-icons/bs';
 
 function ServicesCard({ service }) {
   return (
-    <div className=' bg-white p-10 drop-shadow-2xl m-4'>
-      <div className='flex flex-col items-center'>
-        <img
-          src={service?.image}
-          alt='Shoes'
-          className='rounded-xl h-24 w-24'
-        />
+    <div className=' bg-white drop-shadow-2xl m-4'>
+      <div
+        className='h-64 w-full bg-cover bg-no-repeat opacity-80 relative'
+        style={{ backgroundImage: `url(${service?.image})` }}
+      >
+        <div className='absolute inset-x-0 bottom-[-35px]'>
+          <h3 className='text-9xl text-main font-lobster text-center'>
+            {service?.id}
+          </h3>
+        </div>
+      </div>
+      <div className='flex flex-col items-center p-10'>
         <h2 className='text-xl md:text-2xl text-center my-2'>
           {service?.name}
         </h2>{' '}
