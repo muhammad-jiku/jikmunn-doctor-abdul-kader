@@ -4,6 +4,7 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import About from './About/About';
+import Services from './Services/Services';
 import Testimonials from './Testimony/Testimonials';
 
 function HomeSection() {
@@ -12,6 +13,7 @@ function HomeSection() {
       <Banner />
       <Features />
       <About />
+      <Services />
       <Testimonials />
     </>
   );

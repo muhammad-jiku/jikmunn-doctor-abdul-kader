@@ -23,13 +23,13 @@ function About() {
         <div className='w-full lg:w-1/2 px-2 lg:p-0 mx-auto lg:mx-2 mt-0 lg:mt-[-220px] z-50 relative'>
           <div className='p-10 bg-white drop-shadow-2xl box-border absolute'>
             <div className='flex flex-col'>
-              <h2 className='text-2xl lg:text-5xl text-main font-lobster tracking-wide lg:tracking-widest my-2'>
+              <h2 className='text-3xl lg:text-5xl text-main font-extrabold font-lobster tracking-wide lg:tracking-widest my-2'>
                 People Trust Me
               </h2>
               <h2 className='text-lg lg:text-xl font-semibold text-gray mb-2 font-oswald tracking-widest'>
                 because my patients are my family
               </h2>
-              <hr className='w-1/2 mb-2   border-slate-300' />
+              <hr className='w-1/2 mb-2 border-[1px] border-slate-300' />
               <div className='py-2 box-border'>
                 <p className='text-gray text-justify my-2 text-sm md:text-lg'>
                   One of the most critical factors in people’s lives is the
