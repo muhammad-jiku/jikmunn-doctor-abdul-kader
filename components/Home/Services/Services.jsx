@@ -54,7 +54,7 @@ function Services() {
   ];
 
   return (
-    <div className='hero min-h-screen mb-4 mt-96 sm:mt-72 lg:mt-48 p-3 flex flex-col justify-center items-center'>
+    <div className='container mx-auto my-10 min-h-screen mb-4 mt-96 sm:mt-72 lg:mt-48 p-3 flex flex-col justify-center items-center'>
       <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider'>
         Services
       </h2>

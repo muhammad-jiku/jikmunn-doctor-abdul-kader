@@ -19,7 +19,6 @@ function About() {
             Learn more about me
           </h2>
         </div>
-
         <div className='w-full lg:w-1/2 px-2 lg:p-0 mx-auto lg:mx-2 mt-0 lg:mt-[-220px] z-50 relative'>
           <div className='p-10 bg-white drop-shadow-2xl box-border absolute'>
             <div className='flex flex-col'>
