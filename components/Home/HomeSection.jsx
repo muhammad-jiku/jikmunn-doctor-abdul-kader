@@ -9,6 +9,7 @@ import Testimonials from './Testimony/Testimonials';
 import Prices from './Prices/Prices';
 import Appointment from './Appoinment/Appointment';
 import Partners from './Partners/Partners';
+import Location from './Location/Location';
 
 function HomeSection() {
   return (
@@ -21,6 +22,7 @@ function HomeSection() {
       <Prices />
       <Appointment />
       <Partners />
+      <Location />
     </>
   );
 }
