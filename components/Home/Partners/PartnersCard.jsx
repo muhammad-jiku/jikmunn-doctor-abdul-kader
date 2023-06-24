@@ -1,22 +1,16 @@
 'use client';
 
 import React from 'react';
-import healthyImg from '../../../assets/images/healthy-icon.png';
-import researchImg from '../../../assets/images/research-icon.png';
 import dentalImg from '../../../assets/images/dental-icon.png';
-import insuranceImg from '../../../assets/images/umbrella-icon.png';
-import labImg from '../../../assets/images/lab-icon.png';
-// Import Swiper React components
+import labImg from '../../../assets/images/white-microscope-icon.png';
+import healthyImg from '../../../assets/images/white-healthy-icon.png';
+import researchImg from '../../../assets/images/white-research-icon.png';
+import umbrellaImg from '../../../assets/images/white-umbrella-icon.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
 import '../../../styles/globals.css';
-
-// import required modules
-import { Autoplay, Pagination } from 'swiper';
 
 function PartnersCard() {
   const data = [
@@ -34,7 +28,7 @@ function PartnersCard() {
     },
     {
       name: 'Umbrella Insurance',
-      image: `${insuranceImg?.src}`,
+      image: `${umbrellaImg?.src}`,
     },
     {
       name: 'Quick Lab',
