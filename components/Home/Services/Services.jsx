@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { BsArrowRight } from 'react-icons/bs';
 import ServicesCard from './ServicesCard';
 import diabeteseImg from '../../../assets/images/diabetes.jpg';
 import asthmaImg from '../../../assets/images/asthma2.jpg';
@@ -13,42 +14,44 @@ function Services() {
   const data = [
     {
       id: '01',
-      name: 'Medical Treatment',
+      name: 'Diabetes Treatment',
       description:
-        'Management and care of a patient to combat disease or disorder.',
+        'We consider all the signs and symptoms of a patient to diagnose diabetes.',
       image: `${diabeteseImg?.src}`,
     },
     {
       id: '02',
-      name: 'Emergency Help',
+      name: 'Asthma Diagnose',
       description:
-        'We have special equipment to give emergency help if/when necessary.',
+        'We guarantee our patients the most effective treatment for asthma at the clinic.',
       image: `${asthmaImg?.src}`,
     },
     {
       id: '03',
-      name: 'Regular Examination',
-      description: 'Make online appointments for regular health examinations.',
+      name: 'Stroke Therapeutic',
+      description:
+        'We examine the neccessary brain parts of our patients here at our facility to provide best treatment for stroke.',
       image: `${strokeImg?.src}`,
     },
     // {
     //   id: '04',
-    //   name: 'Medical Treatment',
+    //   name: 'Skin Care',
     //   description:
-    //     'Management and care of a patient to combat disease or disorder.',
+    //     'For patients’ convenience, we take every step to guarantee our patients the most effective care for skin.',
     //   image: `${skinImg?.src}`,
     // },
     // {
     //   id: '05',
-    //   name: 'Emergency Help',
+    //   name: 'New Born Care',
     //   description:
-    //     'We have special equipment to give emergency help if/when necessary.',
+    //     'Management and care of a patient to combat disease or disorder.',
     //   image: `${newbornImg?.src}`,
     // },
     // {
     //   id: '06',
-    //   name: 'Regular Examination',
-    //   description: 'Make online appointments for regular health examinations.',
+    //   name: 'Emergency Services',
+    //   description:
+    //     'We have special equipment to provide emergency help when it is necessary.',
     //   image: `${emergencyImg?.src}`,
     // },
   ];
@@ -62,11 +65,15 @@ function Services() {
         ambulant clinic & emergency
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      <div className='flex flex-col lg:flex-row justify-center md:justify-around container mx-auto my-6 '>
+      <div className='flex flex-col lg:flex-row justify-center lg:justify-around container mx-auto my-6'>
         {data.map((service, index) => (
           <ServicesCard key={index} service={service} />
         ))}
-      </div>
+      </div>{' '}
+      <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
+        <span>View All Services</span>
+        <BsArrowRight className='ml-2 font-bold' />
+      </h2>
     </div>
   );
 }

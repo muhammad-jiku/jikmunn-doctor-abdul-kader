@@ -50,7 +50,7 @@ function Prices() {
         fair prices for better quality
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      <div className='flex flex-col lg:flex-row lg:flex-wrap justify-center md:justify-around my-6'>
+      <div className='flex flex-col lg:flex-row justify-center md:justify-around container mx-auto my-6'>
         {data.map((price, index) => (
           <PricesCard key={index} price={price} />
         ))}

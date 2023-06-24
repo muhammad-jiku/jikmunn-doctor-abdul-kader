@@ -5,7 +5,7 @@ import { BsArrowRight } from 'react-icons/bs';
 
 function FeaturesCard({ feature }) {
   return (
-    <div className=' bg-white p-10 drop-shadow-2xl m-4'>
+    <div className='m-4 p-10 bg-white drop-shadow-2xl'>
       <div className='flex flex-col items-center'>
         <img
           src={feature?.image}

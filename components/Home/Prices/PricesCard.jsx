@@ -6,7 +6,7 @@ import { TiTick } from 'react-icons/ti';
 
 function PricesCard({ price }) {
   return (
-    <div className='bg-white drop-shadow-2xl m-4'>
+    <div className='m-4 bg-white drop-shadow-2xl'>
       <div
         className='h-64 w-full bg-cover bg-no-repeat opacity-70 relative'
         style={{ backgroundImage: `url(${price?.image})` }}
