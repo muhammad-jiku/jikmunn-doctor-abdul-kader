@@ -8,6 +8,7 @@ import Services from './Services/Services';
 import Testimonials from './Testimony/Testimonials';
 import Prices from './Prices/Prices';
 import Appointment from './Appoinment/Appointment';
+import Partners from './Partners/Partners';
 
 function HomeSection() {
   return (
@@ -19,6 +20,7 @@ function HomeSection() {
       <Testimonials />
       <Prices />
       <Appointment />
+      <Partners />
     </>
   );
 }
