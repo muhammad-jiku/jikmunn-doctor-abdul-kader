@@ -1,9 +1,15 @@
 'use client';
 
 import React from 'react';
+import Banner from './Banner/Banner';
 
 function ServicesSection() {
-  return <div>ServicesSection</div>;
+  return (
+    <>
+      <Banner />
+      ServicesSection
+    </>
+  );
 }
 
 export default ServicesSection;
