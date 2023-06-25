@@ -18,7 +18,7 @@ function Banner() {
             <h2 className='text-lg lg:text-xl font-semibold text-gray mb-2 font-oswald tracking-widest'>
               professional care for your health
             </h2>
-            <div className='w-2/3 mb-2 divider'></div>
+            <hr className='w-1/2 mb-2 border-[1px] border-slate-300' />
           </div>
           <div className='px-1 sm:px-8'>
             <h1 className='text-md text-justify'>
