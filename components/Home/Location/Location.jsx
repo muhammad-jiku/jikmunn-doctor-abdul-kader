@@ -10,7 +10,8 @@ function Location() {
         className='w-full'
         height='600'
         style={{ border: 0 }}
-        allowfullscreen={true}
+        // allowfullscreen={true}
+        allowFullScreen={true}
         loading='lazy'
         referrerpolicy='no-referrer-when-downgrade'
       ></iframe>
