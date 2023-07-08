@@ -1,9 +1,7 @@
-'use client';
-
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 
-function ServicesCard({ service }) {
+const CustomServiceCard = ({ service }) => {
   return (
     <div className='m-4 bg-white drop-shadow-2xl'>
       <div
@@ -32,6 +30,6 @@ function ServicesCard({ service }) {
       </div>
     </div>
   );
-}
+};
 
-export default ServicesCard;
+export default CustomServiceCard;

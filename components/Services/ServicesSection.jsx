@@ -8,8 +8,7 @@ import strokeImg from '../../assets/images/stroke2.jpg';
 import skinImg from '../../assets/images/skin.jpg';
 import newbornImg from '../../assets/images/newborn.jpg';
 import emergencyImg from '../../assets/images/emergency247.jpg';
-import { CustomBanner } from '..';
-import ServicesCard from '../Home/Services/ServicesCard';
+import { CustomBanner, CustomServiceCard } from '..';
 
 function ServicesSection() {
   const bannerData = {
@@ -69,7 +68,7 @@ function ServicesSection() {
       <CustomBanner data={bannerData} />
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 container mx-auto my-10'>
         {services.map((service, index) => (
-          <ServicesCard key={index} service={service} />
+          <CustomServiceCard key={index} service={service} />
         ))}
       </div>
     </>

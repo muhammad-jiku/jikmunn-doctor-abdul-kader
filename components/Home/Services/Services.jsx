@@ -2,16 +2,16 @@
 
 import React from 'react';
 import { BsArrowRight } from 'react-icons/bs';
-import ServicesCard from './ServicesCard';
 import diabeteseImg from '../../../assets/images/diabetes.jpg';
 import asthmaImg from '../../../assets/images/asthma2.jpg';
 import strokeImg from '../../../assets/images/stroke2.jpg';
 import skinImg from '../../../assets/images/skin.jpg';
 import newbornImg from '../../../assets/images/newborn.jpg';
 import emergencyImg from '../../../assets/images/emergency247.jpg';
+import { CustomServiceCard } from '@/components';
 
 function Services() {
-  const data = [
+  const services = [
     {
       id: '01',
       name: 'Diabetes Treatment',
@@ -65,9 +65,9 @@ function Services() {
         ambulant clinic & emergency
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      <div className='flex flex-col lg:flex-row justify-center lg:justify-around container mx-auto my-6'>
-        {data.map((service, index) => (
-          <ServicesCard key={index} service={service} />
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 container mx-auto my-10'>
+        {services.map((service, index) => (
+          <CustomServiceCard key={index} service={service} />
         ))}
       </div>{' '}
       <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
