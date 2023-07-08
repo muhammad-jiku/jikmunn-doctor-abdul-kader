@@ -31,7 +31,7 @@ const CustomServiceCard = ({ service }) => {
         </div>
         <button
           className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main my-2'
-          onClick={() => router.push('`/services/${service?.id}`')}
+          onClick={() => router.push(`/services/${service?.id}`)}
         >
           Learn More <BsArrowRight className='ml-1 font-bold' />
         </button>

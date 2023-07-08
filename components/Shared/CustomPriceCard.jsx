@@ -1,10 +1,13 @@
 'use client';
 
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
+import { useRouter } from 'next/navigation';
 import { TiTick } from 'react-icons/ti';
+import { BsArrowRight } from 'react-icons/bs';
 
-function PricesCard({ price }) {
+const CustomPriceCard = ({ price }) => {
+  const router = useRouter();
+
   return (
     <div className='m-4 bg-white drop-shadow-2xl'>
       <div
@@ -32,12 +35,15 @@ function PricesCard({ price }) {
             </p>
           ))}
         </div>
-        <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main my-2'>
+        <button
+          className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main my-2'
+          onClick={() => router.push('/services')}
+        >
           Appointment <BsArrowRight className='ml-1 font-bold' />
         </button>
       </div>
     </div>
   );
-}
+};
 
-export default PricesCard;
+export default CustomPriceCard;
