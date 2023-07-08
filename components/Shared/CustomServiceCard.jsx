@@ -1,7 +1,12 @@
+'use client';
+
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { BsArrowRight } from 'react-icons/bs';
 
 const CustomServiceCard = ({ service }) => {
+  const router = useRouter();
+
   return (
     <div className='m-4 bg-white drop-shadow-2xl'>
       <div
@@ -24,7 +29,10 @@ const CustomServiceCard = ({ service }) => {
             {service?.description}
           </p>
         </div>
-        <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main my-2'>
+        <button
+          className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main my-2'
+          onClick={() => router.push('`/services/${service?.id}`')}
+        >
           Learn More <BsArrowRight className='ml-1 font-bold' />
         </button>
       </div>
