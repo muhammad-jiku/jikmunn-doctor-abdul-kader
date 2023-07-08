@@ -9,6 +9,7 @@ import skinImg from '../../../assets/images/skin.jpg';
 import newbornImg from '../../../assets/images/newborn.jpg';
 import emergencyImg from '../../../assets/images/emergency247.jpg';
 import { CustomServiceCard } from '@/components';
+import Link from 'next/link';
 
 function Services() {
   const services = [
@@ -69,11 +70,13 @@ function Services() {
         {services.map((service, index) => (
           <CustomServiceCard key={index} service={service} />
         ))}
-      </div>{' '}
-      <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
-        <span>View All Services</span>
-        <BsArrowRight className='ml-2 font-bold' />
-      </h2>
+      </div>
+      <Link href={'/services'}>
+        <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
+          <span>View All Services</span>
+          <BsArrowRight className='ml-2 font-bold' />
+        </h2>
+      </Link>
     </div>
   );
 }

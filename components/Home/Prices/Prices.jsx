@@ -6,9 +6,10 @@ import firstAppointmentImg from '../../../assets/images/first-appointment.jpg';
 import followUpAppointmentImg from '../../../assets/images/follow-up-appointment.jpg';
 import weAcceptImg from '../../../assets/images/we-accept.jpg';
 import { CustomPriceCard } from '@/components';
+import Link from 'next/link';
 
 function Prices() {
-  const data = [
+  const prices = [
     {
       name: 'First Appointment',
       description: [
@@ -50,16 +51,17 @@ function Prices() {
         fair prices for better quality
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      {/* <div className='flex flex-col lg:flex-row justify-center md:justify-around container mx-auto my-6'> */}
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 container mx-auto my-10'>
-        {data.map((price, index) => (
+        {prices.map((price, index) => (
           <CustomPriceCard key={index} price={price} />
         ))}
       </div>
-      <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
-        <span>View All Prices</span>
-        <BsArrowRight className='ml-2 font-bold' />
-      </h2>
+      <Link href={'/prices'}>
+        <h2 className='text-lg lg:text-xl text-gray font-bold my-2 flex justify-center items-center'>
+          <span>View All Prices</span>
+          <BsArrowRight className='ml-2 font-bold' />
+        </h2>
+      </Link>
     </div>
   );
 }
