@@ -3,6 +3,7 @@ export { default as EmptyState } from './Shared/EmptyState';
 export { default as CustomBanner } from './Shared/CustomBanner';
 export { default as CustomServiceCard } from './Shared/CustomServiceCard';
 export { default as CustomPriceCard } from './Shared/CustomPriceCard';
+export { default as MainLayout } from './Layout/MainLayout';
 export { default as HomeSection } from './Home/HomeSection';
 export { default as ServicesSection } from './Services/ServicesSection';
 export { default as Service } from './Services/Service';
