@@ -6,8 +6,10 @@ import logoImg from '../../assets/images/logo.png';
 import Image from 'next/image';
 import { IoLocation, IoCall } from 'react-icons/io5';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 function Navbar() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = (
@@ -33,7 +35,7 @@ function Navbar() {
         </Link>
       </li>
       <li>
-        <Link href={'/contact'} className='hover:bg-white hover:text-main'>
+        <Link href={'/contacts'} className='hover:bg-white hover:text-main'>
           Contacts
         </Link>
       </li>
@@ -46,8 +48,13 @@ function Navbar() {
   return (
     <div className='navbar bg-base-100'>
       <div className='navbar-start'>
-        <Image src={logoImg.src} alt='logo' width={50} height={50} />
-        <div className='ml-2 hidden md:flex md:flex-col'>
+        <Link href={'/'}>
+          <Image src={logoImg.src} alt='logo' width={50} height={50} />
+        </Link>
+        <div
+          className='ml-2 hidden md:flex md:flex-col cursor-pointer'
+          onClick={() => router.push('/')}
+        >
           <h1 className='text-xl font-lobster leading-none'>Dr. Abdul Kader</h1>
           <h1 className='text-sm font-oswald leading-none text-gray'>
             family doctor near you

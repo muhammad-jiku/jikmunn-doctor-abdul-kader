@@ -17,7 +17,7 @@ function ContactsCard({ contact }) {
         </h2>{' '}
         <hr className='w-1/2 mb-2 border-[1px] border-slate-300' />
         <div className='py-2 box-border'>
-          <p className='text-gray text-justify my-2 text-sm md:text-md'>
+          <p className='text-gray text-justify my-2 text-sm md:text-md hover:bg-white hover:text-main'>
             {contact?.description}
           </p>
         </div>
