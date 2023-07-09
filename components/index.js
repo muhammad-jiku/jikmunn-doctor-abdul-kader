@@ -8,3 +8,4 @@ export { default as HomeSection } from './Home/HomeSection';
 export { default as ServicesSection } from './Services/ServicesSection';
 export { default as Service } from './Services/Service';
 export { default as PricesSection } from './Prices/PricesSection';
+export { default as ContactsSection } from './Contacts/ContactsSection';

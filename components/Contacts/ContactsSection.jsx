@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import bgImg from '../../assets/images/bg2.jpg';
+import bgImg from '../../assets/images/bg3.jpg';
 import { CustomBanner } from '..';
 
 function ContactsSection() {
