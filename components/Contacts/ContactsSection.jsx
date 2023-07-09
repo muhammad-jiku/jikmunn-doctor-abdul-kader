@@ -2,7 +2,7 @@
 
 import React from 'react';
 import bgImg from '../../assets/images/bg3.jpg';
-import { CustomBanner } from '..';
+import { CustomBanner, CustomLocation } from '..';
 
 function ContactsSection() {
   const bannerData = {
@@ -15,6 +15,9 @@ function ContactsSection() {
   return (
     <>
       <CustomBanner data={bannerData} />
+      <div className='mt-2 min-h-screen'>
+        <CustomLocation />
+      </div>
     </>
   );
 }
