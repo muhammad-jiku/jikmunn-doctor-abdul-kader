@@ -5,29 +5,40 @@ import Hamburger from 'hamburger-react';
 import logoImg from '../../assets/images/logo.png';
 import Image from 'next/image';
 import { IoLocation, IoCall } from 'react-icons/io5';
+import Link from 'next/link';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = (
     <>
-      <li className='hover:bg-white hover:text-main'>
-        <a>Home</a>
+      <li>
+        <Link href={'/about'} className='hover:bg-white hover:text-main'>
+          About
+        </Link>
       </li>
-      <li className='hover:bg-white hover:text-main'>
-        <a>About</a>
+      <li>
+        <Link href={'/services'} className='hover:bg-white hover:text-main'>
+          Services
+        </Link>
       </li>
-      <li className='hover:bg-white hover:text-main'>
-        <a>Services</a>
+      <li>
+        <Link href={'/prices'} className='hover:bg-white hover:text-main'>
+          Prices
+        </Link>
       </li>
-      <li className='hover:bg-white hover:text-main'>
-        <a>Prices</a>
+      <li>
+        <Link href={'/blogs'} className='hover:bg-white hover:text-main'>
+          Blogs
+        </Link>
       </li>
-      <li className='hover:bg-white hover:text-main'>
-        <a>Blogs</a>
+      <li>
+        <Link href={'/contact'} className='hover:bg-white hover:text-main'>
+          Contacts
+        </Link>
       </li>
-      <li className='hover:bg-white hover:text-main'>
-        <a>Contacts</a>
+      <li>
+        <a className='hover:bg-white hover:text-main'>Login</a>
       </li>
     </>
   );
@@ -47,7 +58,7 @@ function Navbar() {
         {/* <div className='hidden lg:flex'> */}
         <ul className='menu menu-horizontal px-1'>
           <li>
-            <a>
+            <a className='hover:bg-white hover:text-main'>
               <IoLocation className='mr-1' />
               <span className='text-sm'>
                 310 Razzak Complex, SSK Road, Feni
