@@ -7,6 +7,7 @@ export { default as CustomLocation } from './Shared/CustomLocation';
 export { default as Footer } from './Shared/Footer';
 export { default as MainLayout } from './Layout/MainLayout';
 export { default as HomeSection } from './Home/HomeSection';
+export { default as AboutSection } from './About/AboutSection';
 export { default as ServicesSection } from './Services/ServicesSection';
 export { default as Service } from './Services/Service';
 export { default as PricesSection } from './Prices/PricesSection';
