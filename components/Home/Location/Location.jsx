@@ -1,7 +1,7 @@
 'use client';
 
-import { CustomLocation } from '@/components';
 import React from 'react';
+import { CustomLocation } from '@/components';
 
 function Location() {
   return (
