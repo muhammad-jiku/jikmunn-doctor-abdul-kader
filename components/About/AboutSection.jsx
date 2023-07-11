@@ -5,6 +5,7 @@ import bgImg from '../../assets/images/bg1.jpeg';
 import { CustomBanner } from '..';
 import AboutDetails from './AboutDetails';
 import AboutTimeline from './AboutTimeline';
+import AboutCertificates from './AboutCertificates';
 
 function AboutSection() {
   const bannerData = {
@@ -21,6 +22,7 @@ function AboutSection() {
         <div className='container mx-auto my-2 p-10 flex flex-col justify-center items-center'>
           <AboutDetails />
           <AboutTimeline />
+          <AboutCertificates />
         </div>
       </div>
     </>
