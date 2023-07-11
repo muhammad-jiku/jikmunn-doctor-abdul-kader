@@ -16,7 +16,7 @@ function Footer() {
     {
       name: 'About Me',
       description: [
-        'Dr. Abdul Kader is a board certified Family Medicine physician who provides primary care',
+        'Dr. Abdul Kader is a B.M.D.C registered Family Medicine physician who provides primary care',
       ],
       image: `${aboutmeImg?.src}`,
     },
@@ -100,8 +100,8 @@ function Footer() {
 
         <p className='text-sm lg:text-lg font-semibold font-oswald tracking-widest my-2'>
           Copyright © {year} by{' '}
-          <span className='text-main text-xl font-lobster'>jikmunn</span>. All
-          rights reserved.
+          <span className='text-xl font-lobster'>jikmunn</span>. All rights
+          reserved.
         </p>
       </div>
     </div>

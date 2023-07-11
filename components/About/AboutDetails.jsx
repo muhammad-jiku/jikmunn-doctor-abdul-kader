@@ -41,7 +41,7 @@ function AboutDetails() {
             I received the certificate of full registration as a medical
             practitioner. And I have then, completed a three-month course of
             Certificate in Medical Ultrasound (C.M.U). I have completed the
-            six-month certificate course on the Diabetology under Distine
+            six-month certificate course on the Diabetology under Distance
             Learning Programme (DLP). I Passed the 39th BCS (Health) & attended
             Orientation training developed by DGHS and joined as an Assitant
             Surgeon. In my spare time, I watch Football matches, and Movies.
