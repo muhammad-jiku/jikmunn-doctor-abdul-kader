@@ -18,3 +18,48 @@ body {
   /* background-color: black;
 	color: whitesmoke; */
 }
+
+.timeline-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.vertical-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  padding: 40px 0;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-container {
+  width: 50%;
+  padding-right: 40px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
