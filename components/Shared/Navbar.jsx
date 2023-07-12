@@ -40,7 +40,9 @@ function Navbar() {
         </Link>
       </li>
       <li>
-        <a className='hover:bg-white hover:text-main'>Login</a>
+        <Link href={'/signin'} className='hover:bg-white hover:text-main'>
+          Signin
+        </Link>
       </li>
     </>
   );
