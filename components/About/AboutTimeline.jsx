@@ -11,7 +11,7 @@ import {
   MdOutlineSchool,
   MdOutlineStarBorderPurple500,
 } from 'react-icons/md';
-import '../../styles/timeline.css';
+import styles from '../../styles/timeline.module.css';
 
 function AboutTimeline() {
   return (
@@ -21,7 +21,7 @@ function AboutTimeline() {
         <VerticalTimelineElement
           className='vertical-timeline-element--education'
           date='2016'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           contentStyle={{
             background: 'rgb(233, 30, 99)',
             color: '#fff',
@@ -43,7 +43,7 @@ function AboutTimeline() {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='2016-2017'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           contentStyle={{
             background: 'rgb(233, 30, 99)',
             color: '#fff',
@@ -67,7 +67,7 @@ function AboutTimeline() {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='2018'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           contentStyle={{
             background: 'rgb(233, 30, 99)',
             color: '#fff',
@@ -91,7 +91,7 @@ function AboutTimeline() {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='2019'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           contentStyle={{
             background: 'rgb(233, 30, 99)',
             color: '#fff',
@@ -115,7 +115,7 @@ function AboutTimeline() {
         <VerticalTimelineElement
           className='vertical-timeline-element--work'
           date='2019'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           contentStyle={{
             background: 'rgb(233, 30, 99)',
             color: '#fff',
@@ -145,7 +145,7 @@ function AboutTimeline() {
             borderRight: '7px solid  rgb(33, 150, 243)',
           }}
           date='2018'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<MdWorkOutline />}
         >
@@ -167,7 +167,7 @@ function AboutTimeline() {
             borderRight: '7px solid  rgb(33, 150, 243)',
           }}
           date='2019'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<MdWorkOutline />}
         >
@@ -189,7 +189,7 @@ function AboutTimeline() {
             borderRight: '7px solid  rgb(33, 150, 243)',
           }}
           date='2019-2022'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<MdWorkOutline />}
         >
@@ -211,7 +211,7 @@ function AboutTimeline() {
             borderRight: '7px solid  rgb(33, 150, 243)',
           }}
           date='2022-Present'
-          dateClassName='dateInfo'
+          dateClassName={`${styles.dateInfo}`}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<MdWorkOutline />}
         >

@@ -19,7 +19,7 @@ function AboutSection() {
     <>
       <CustomBanner data={bannerData} />
       <div className='mt-2 min-h-screen'>
-        <div className='container mx-auto my-2 p-10 flex flex-col justify-center items-center'>
+        <div className='container mx-auto my-2 p-4 lg:p-8 flex flex-col justify-center items-center'>
           <AboutDetails />
           <AboutTimeline />
           <AboutCertificates />
