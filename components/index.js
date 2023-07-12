@@ -8,6 +8,7 @@ export { default as SocialIcons } from './Shared/SocialIcons';
 export { default as Footer } from './Shared/Footer';
 export { default as MainLayout } from './Layout/MainLayout';
 export { default as HomeSection } from './Home/HomeSection';
+export { default as Auth } from './Auth/Auth';
 export { default as AboutSection } from './About/AboutSection';
 export { default as ServicesSection } from './Services/ServicesSection';
 export { default as Service } from './Services/Service';
