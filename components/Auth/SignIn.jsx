@@ -21,7 +21,7 @@ function SignIn() {
   let signInError;
 
   return (
-    <div className='container mx-auto my-28 p-2 flex flex-col items-center w-full'>
+    <div className='container mx-auto my-28 p-2 md:p-4 flex flex-col items-center w-full'>
       <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider'>
         Welcome!!
       </h2>
@@ -29,7 +29,7 @@ function SignIn() {
         Please sign in to continue
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      <form className='p-1' onSubmit={handleSubmit(onSubmit)}>
+      <form className='p-1 md:p-4' onSubmit={handleSubmit(onSubmit)}>
         {/* Email */}
         <input
           type='email'
