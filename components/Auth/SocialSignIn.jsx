@@ -6,11 +6,10 @@ import { FcGoogle } from 'react-icons/fc';
 function SocialSignIn() {
   return (
     <>
-      <button
-        className='btn text-main bg-white hover:text-white hover:bg-main hover:border-main uppercase w-full'
-        label='Continue with Google'
-        icon={FcGoogle}
-      />
+      <div className='divider mb-2'>OR</div>
+      <button className='btn text-main bg-white border-main hover:text-white hover:bg-main hover:border-main uppercase w-full'>
+        Continue with Google <FcGoogle />
+      </button>
     </>
   );
 }

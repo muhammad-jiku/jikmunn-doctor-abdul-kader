@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import SocialSignIn from './SocialSignIn';
 
 function SignUp() {
   const {
@@ -122,6 +123,7 @@ function SignUp() {
             value='Sign Up'
           />
         </div>
+        <SocialSignIn />
       </form>
     </div>
   );
