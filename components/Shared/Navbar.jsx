@@ -29,11 +29,11 @@ function Navbar() {
           Prices
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link href={'/blogs'} className='hover:bg-white hover:text-main'>
           Blogs
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link href={'/contacts'} className='hover:bg-white hover:text-main'>
           Contacts
@@ -41,7 +41,7 @@ function Navbar() {
       </li>
       <li>
         <Link href={'/signin'} className='hover:bg-white hover:text-main'>
-          Signin
+          Sign in
         </Link>
       </li>
     </>

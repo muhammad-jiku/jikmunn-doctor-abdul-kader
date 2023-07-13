@@ -183,7 +183,7 @@ function SignUp({ setAuthProcess }) {
           //           }}
           className='w-full py-2 mt-1'
         >
-          Login
+          Sign up
         </button>{' '}
         <h4
           //   sx={{
