@@ -1,5 +1,6 @@
 import { Navbar, Footer } from '@/components';
 import '../styles/globals.css';
+import { GlobalProvider } from '@/provider/GlobalProvider';
 
 export const metadata = {
   title: 'Dr. Abdul Kader',
@@ -10,9 +11,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className='flex flex-col min-h-screen overflow-x-hidden'>
-        <Navbar />
-        {children}
-        <Footer />
+        <GlobalProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </GlobalProvider>
       </body>
     </html>
   );
