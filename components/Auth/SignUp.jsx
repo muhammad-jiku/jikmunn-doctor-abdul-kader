@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import SocialSignIn from './SocialSignIn';
 
@@ -18,8 +17,6 @@ function SignUp() {
   const onSubmit = async (data) => {
     console.log(data);
   };
-
-  let signUpError;
 
   return (
     <div className='container mx-auto my-28 p-2 md:p-4 flex flex-col items-center w-full'>
@@ -108,7 +105,6 @@ function SignUp() {
           {errors.password?.type === 'minLength' && (
             <span>{errors?.password?.message}</span>
           )}
-          {signUpError}
         </p>
         <p
           className='text-gray text-sm text-center cursor-pointer font-bold'
