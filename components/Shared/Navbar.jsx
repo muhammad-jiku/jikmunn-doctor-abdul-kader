@@ -114,7 +114,10 @@ function Navbar() {
         {user && (
           <div className='avatar mx-2'>
             <div className='w-10 h-10 rounded-full ring ring-main ring-offset-base-100 ring-offset-2'>
-              <img src={logoImg.src} alt='avatar' />
+              <img
+                src={user?.avatar ? user?.avatar?.url : logoImg.src}
+                alt='avatar'
+              />
             </div>
           </div>
         )}

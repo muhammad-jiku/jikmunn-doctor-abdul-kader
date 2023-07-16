@@ -267,8 +267,8 @@ function SignIn() {
             value='Sign In'
           />
         </div>
-        <SocialSignIn />
       </form>
+      <SocialSignIn />
     </div>
   );
 }

@@ -293,8 +293,8 @@ function SignUp() {
             value='Sign Up'
           />
         </div>
-        <SocialSignIn />
       </form>
+      <SocialSignIn />
     </div>
   );
 }
