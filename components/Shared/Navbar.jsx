@@ -1,16 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Hamburger from 'hamburger-react';
 import logoImg from '../../assets/images/logo.png';
 import Image from 'next/image';
 import { IoLocation, IoCall } from 'react-icons/io5';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
+import AuthContext from '@/context/AuthContext';
 
 function Navbar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+
+  const { data: session } = useSession();
+  const { user, setUser } = useContext(AuthContext);
+
+  console.log('data session', session);
+  console.log('data user', user);
+
+  useEffect(() => {
+    if (session) {
+      setUser(session?.user);
+    }
+  }, [session, setUser]);
+
+  const signOutHandler = async () => {
+    router.push('/');
+    await signOut();
+  };
 
   const menuItems = (
     <>
@@ -39,11 +58,20 @@ function Navbar() {
           Contacts
         </Link>
       </li>
-      <li>
-        <Link href={'/signin'} className='hover:bg-white hover:text-main'>
-          Sign in
-        </Link>
-      </li>
+      {!user ? (
+        <li>
+          <Link href={'/signin'} className='hover:bg-white hover:text-main'>
+            Sign in
+          </Link>
+        </li>
+      ) : (
+        <button
+          className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 flex uppercase'
+          onClick={signOutHandler}
+        >
+          <span>sign out</span>
+        </button>
+      )}
     </>
   );
 
@@ -83,11 +111,13 @@ function Navbar() {
           <IoCall /> <span>+880 183 227 8260</span>
         </button>
 
-        <div className='avatar mx-2'>
-          <div className='w-10 h-10 rounded-full ring ring-main ring-offset-base-100 ring-offset-2'>
-            <img src={logoImg.src} alt='avatar' />
+        {user && (
+          <div className='avatar mx-2'>
+            <div className='w-10 h-10 rounded-full ring ring-main ring-offset-base-100 ring-offset-2'>
+              <img src={logoImg.src} alt='avatar' />
+            </div>
           </div>
-        </div>
+        )}
         <div className='dropdown dropdown-bottom dropdown-end lg:hidden'>
           <label tabIndex={-1}>
             <Hamburger
