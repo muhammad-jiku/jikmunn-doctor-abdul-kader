@@ -1,10 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import SocialSignIn from './SocialSignIn';
+import { toast } from 'react-toastify';
+import { signIn } from 'next-auth/react';
+import { parseCallbackUrl } from '@/utils/helpers';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 function SignIn() {
+  const router = useRouter();
+  const params = useSearchParams();
+  const callBackUrl = params.get('callbackUrl');
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -27,11 +35,35 @@ function SignIn() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    setEmail(data.email);
-    setPassword(data.password);
-    setConfirmPassword(data.confirmPassword);
-    console.log(email, password, confirmPassword);
+    setEmail(data?.email);
+    setPassword(data?.password);
+    setConfirmPassword(data?.confirmPassword);
+    console.log({ email, password, confirmPassword });
+
+    if (data?.password === data?.confirmPassword) {
+      const signInData = await signIn('credentials', {
+        email: data?.email,
+        password: data?.password,
+        callbackUrl: callBackUrl ? parseCallbackUrl(callBackUrl) : '/',
+      });
+
+      if (signInData?.error) {
+        console.log(signInData?.error);
+        toast.error(signInData?.error);
+      }
+
+      if (signInData?.ok) {
+        toast.success('Thanks for signing in!!');
+        router.push('/');
+      }
+    }
   };
+
+  useEffect(() => {
+    if (password === confirmPassword && isSubmitSuccessful) {
+      reset();
+    }
+  }, [password, confirmPassword, isSubmitSuccessful, reset]);
 
   return (
     <div className='container mx-auto my-28 p-2 md:p-4 flex flex-col items-center'>
