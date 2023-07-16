@@ -1,8 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import SocialSignIn from './SocialSignIn';
+import AuthContext from '@/context/AuthContext';
+import { toast } from 'react-toastify';
 
 function SignUp() {
   const [username, setUsername] = useState('');
@@ -17,6 +19,8 @@ function SignUp() {
   const handleClickShowConfirmPassword = () =>
     setShowConfirmPassword((show) => !show);
 
+  const { error, signUpUser, clearErrors } = useContext(AuthContext);
+
   const {
     register,
     formState: { errors, isSubmitSuccessful },
@@ -28,12 +32,34 @@ function SignUp() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    setUsername(data.username);
-    setEmail(data.email);
-    setPassword(data.password);
-    setConfirmPassword(data.confirmPassword);
-    console.log(username, email, password, confirmPassword);
+    setUsername(data?.username);
+    setEmail(data?.email);
+    setPassword(data?.password);
+    setConfirmPassword(data?.confirmPassword);
+    console.log({ username, email, password, confirmPassword });
+
+    if (data?.password === data?.confirmPassword) {
+      await signUpUser({
+        username: data?.username,
+        email: data?.email,
+        password: data?.password,
+      });
+    }
   };
+
+  useEffect(() => {
+    if (password === confirmPassword && isSubmitSuccessful) {
+      toast.success('Thanks for signing up! Please sign in now to continue!!');
+      reset();
+    }
+  }, [password, confirmPassword, isSubmitSuccessful, reset]);
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      clearErrors();
+    }
+  }, [error, clearErrors]);
 
   return (
     <div className='container mx-auto my-28 p-2 md:p-4 flex flex-col items-center'>
@@ -249,6 +275,7 @@ function SignUp() {
           )}
         </p>
         <p className='my-2 text-sm text-red-500 font-semibold'>
+          {console.log(password, confirmPassword)}
           {password !== confirmPassword && (
             <span>Ooops! Sorry password did not match</span>
           )}
