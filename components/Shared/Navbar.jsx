@@ -107,22 +107,22 @@ function Navbar() {
       </div>
       <div className='navbar-end'>
         {user ? (
-          // <Link href='/dashboard/me'>
-          <div className='flex items-center my-4 space-x-3 cursor-pointer'>
-            <img
-              className='w-10 h-10 rounded-full'
-              src={user?.avatar ? user?.avatar?.url : profileImg?.src}
-              loading='lazy'
-            />
-            <div className='hidden sm:block space-y-1 font-medium'>
-              <p className='text-xs'>
-                {user?.username}
-                <time className='block text-xs text-gray'>{user?.email}</time>
-              </p>
+          <Link href='/dashboard/me'>
+            <div className='flex items-center my-4 space-x-3 cursor-pointer'>
+              <img
+                className='w-10 h-10 rounded-full'
+                src={user?.avatar ? user?.avatar?.url : profileImg?.src}
+                loading='lazy'
+              />
+              <div className='hidden sm:block space-y-1 font-medium'>
+                <p className='text-xs'>
+                  {user?.username}
+                  <time className='block text-xs text-gray'>{user?.email}</time>
+                </p>
+              </div>
             </div>
-          </div>
+          </Link>
         ) : (
-          // </Link>
           <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 hidden lg:flex'>
             <IoCall /> <span>+880 183 227 8260</span>
           </button>
