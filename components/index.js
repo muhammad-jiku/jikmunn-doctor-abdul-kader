@@ -15,3 +15,4 @@ export { default as Service } from './Services/Service';
 export { default as PricesSection } from './Prices/PricesSection';
 export { default as ContactsSection } from './Contacts/ContactsSection';
 export { default as Sidebar } from './Dashboard/Sidebar';
+export { default as Profile } from './Dashboard/Profile';
