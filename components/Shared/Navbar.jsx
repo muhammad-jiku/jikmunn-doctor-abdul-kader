@@ -58,19 +58,19 @@ function Navbar() {
           Contacts
         </Link>
       </li>
-      {!user ? (
+      {user ? (
+        <button
+          className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 flex uppercase'
+          onClick={signOutHandler}
+        >
+          sign out
+        </button>
+      ) : (
         <li>
           <Link href={'/signin'} className='hover:bg-white hover:text-main'>
             Sign in
           </Link>
         </li>
-      ) : (
-        <button
-          className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 flex uppercase'
-          onClick={signOutHandler}
-        >
-          <span>sign out</span>
-        </button>
       )}
     </>
   );
@@ -92,7 +92,6 @@ function Navbar() {
         </div>
       </div>
       <div className='navbar-center hidden lg:flex'>
-        {/* <div className='hidden lg:flex'> */}
         <ul className='menu menu-horizontal px-1'>
           <li>
             <a className='hover:bg-white hover:text-main'>
@@ -104,22 +103,28 @@ function Navbar() {
           </li>
           {menuItems}
         </ul>
-        {/* </div> */}
       </div>
       <div className='navbar-end'>
-        <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 hidden lg:flex'>
-          <IoCall /> <span>+880 183 227 8260</span>
-        </button>
-
-        {user && (
-          <div className='avatar mx-2'>
-            <div className='w-10 h-10 rounded-full ring ring-main ring-offset-base-100 ring-offset-2'>
-              <img
-                src={user?.avatar ? user?.avatar?.url : logoImg.src}
-                alt='avatar'
-              />
+        {user ? (
+          // <Link href='/dashboard/me'>
+          <div className='flex items-center my-4 space-x-3 cursor-pointer'>
+            <img
+              className='w-10 h-10 rounded-full'
+              src={user?.avatar ? user?.avatar?.url : logoImg?.src}
+              loading='lazy'
+            />
+            <div className='hidden sm:block space-y-1 font-medium'>
+              <p className='text-xs'>
+                {user?.username}
+                <time className='block text-xs text-gray'>{user?.email}</time>
+              </p>
             </div>
           </div>
+        ) : (
+          // </Link>
+          <button className='btn bg-main text-white hover:bg-white hover:text-black hover:border-main mr-2 hidden lg:flex'>
+            <IoCall /> <span>+880 183 227 8260</span>
+          </button>
         )}
         <div className='dropdown dropdown-bottom dropdown-end lg:hidden'>
           <label tabIndex={-1}>
