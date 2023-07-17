@@ -3,6 +3,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Hamburger from 'hamburger-react';
 import logoImg from '../../assets/images/logo.png';
+import profileImg from '../../assets/images/default_profile_avatar.png';
 import Image from 'next/image';
 import { IoLocation, IoCall } from 'react-icons/io5';
 import Link from 'next/link';
@@ -110,7 +111,7 @@ function Navbar() {
           <div className='flex items-center my-4 space-x-3 cursor-pointer'>
             <img
               className='w-10 h-10 rounded-full'
-              src={user?.avatar ? user?.avatar?.url : logoImg?.src}
+              src={user?.avatar ? user?.avatar?.url : profileImg?.src}
               loading='lazy'
             />
             <div className='hidden sm:block space-y-1 font-medium'>
