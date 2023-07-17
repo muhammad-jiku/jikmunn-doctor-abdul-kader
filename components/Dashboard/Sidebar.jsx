@@ -9,7 +9,7 @@ function Sidebar() {
 
   return (
     <aside className='md:w-1/3 lg:w-1/4 px-4'>
-      <ul className='sidebar'>
+      <ul>
         <li>
           <Link
             href='/me'
@@ -42,7 +42,7 @@ function Sidebar() {
             Update Password
           </Link>
         </li>
-        <hr />
+        <hr className='mb-2 border-2 border-slate-300' />
         {user?.role === 'admin' && (
           <>
             <li>
