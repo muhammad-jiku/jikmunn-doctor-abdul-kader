@@ -253,9 +253,11 @@ function SignIn() {
           )}
         </p>
         <p className='my-2 text-sm text-red-500 font-semibold'>
-          {password !== confirmPassword && (
-            <span>Ooops! Sorry password did not match</span>
-          )}
+          {password?.length === confirmPassword?.length
+            ? password !== confirmPassword && (
+                <span>Ooops! Sorry password did not match</span>
+              )
+            : null}
         </p>
         <p
           className='text-gray text-sm text-center font-bold cursor-pointer'

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
@@ -266,6 +266,13 @@ function UpdatePassword() {
           {errors?.confirmPassword?.type === 'required' && (
             <span>{errors?.confirmPassword?.message}</span>
           )}
+        </p>
+        <p className='my-2 text-sm text-red-500 font-semibold'>
+          {newPassword?.length === confirmPassword?.length
+            ? newPassword !== confirmPassword && (
+                <span>Ooops! Sorry password did not match</span>
+              )
+            : null}
         </p>
 
         <div className='form-control mt-6'>
