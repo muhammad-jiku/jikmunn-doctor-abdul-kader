@@ -20,7 +20,7 @@ function Sidebar() {
         </li>
         <li>
           <Link
-            href='/me/orders'
+            href='/dashboard/me/appointments'
             className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
           >
             My Appointments

@@ -25,8 +25,8 @@ function Appointments() {
         My Appointments
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
-      <div className='overflow-x-auto'>
-        <table className='table table-xs'>
+      <div className='overflow-x-auto my-2 w-full'>
+        <table className='table table-xs sm:table-sm md:table-md lg:table-lg p-1 md:p-2 w-full'>
           <thead>
             <tr>
               <th>No.</th>

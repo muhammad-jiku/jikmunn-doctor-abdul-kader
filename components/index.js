@@ -17,3 +17,4 @@ export { default as ContactsSection } from './Contacts/ContactsSection';
 export { default as Sidebar } from './Dashboard/Sidebar';
 export { default as Profile } from './Dashboard/Profile';
 export { default as UpdatePassword } from './Dashboard/UpdatePassword';
+export { default as Appointments } from './Dashboard/User/Appointments';
