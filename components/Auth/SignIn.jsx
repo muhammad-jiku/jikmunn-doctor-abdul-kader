@@ -35,9 +35,9 @@ function SignIn() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    setEmail(data?.email);
-    setPassword(data?.password);
-    setConfirmPassword(data?.confirmPassword);
+    // setEmail(data?.email);
+    // setPassword(data?.password);
+    // setConfirmPassword(data?.confirmPassword);
     console.log({ email, password, confirmPassword });
 
     if (data?.password === data?.confirmPassword) {
@@ -80,9 +80,10 @@ function SignIn() {
           type='email'
           placeholder='Email'
           // value={email}
-          // defaultValue={email}
+          defaultValue={email}
           // onChange={(e) => setEmail(e.target.value)}
           {...register('email', {
+            onChange: (e) => setEmail(e.target.value),
             required: {
               value: true,
               message: 'Please fill up the Email field',
@@ -100,9 +101,10 @@ function SignIn() {
             type={showPassword ? 'text' : 'password'}
             placeholder='Password'
             // value={password}
-            // defaultValue={password}
+            defaultValue={password}
             // onChange={(e) => setPassword(e.target.value)}
             {...register('password', {
+              onChange: (e) => setPassword(e.target.value),
               required: {
                 value: true,
                 message: 'Please fill up the Password field',
@@ -162,9 +164,10 @@ function SignIn() {
             type={showConfirmPassword ? 'text' : 'password'}
             placeholder='Confirm Password'
             // value={confirmPassword}
-            // defaultValue={confirmPassword}
+            defaultValue={confirmPassword}
             // onChange={(e) => setConfirmPassword(e.target.value)}
             {...register('confirmPassword', {
+              onChange: (e) => setConfirmPassword(e.target.value),
               required: {
                 value: true,
                 message: 'Please fill up the Confirm Password field',

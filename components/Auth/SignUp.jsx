@@ -32,10 +32,10 @@ function SignUp() {
 
   const onSubmit = async (data) => {
     console.log(data);
-    setUsername(data?.username);
-    setEmail(data?.email);
-    setPassword(data?.password);
-    setConfirmPassword(data?.confirmPassword);
+    // setUsername(data?.username);
+    // setEmail(data?.email);
+    // setPassword(data?.password);
+    // setConfirmPassword(data?.confirmPassword);
     console.log({ username, email, password, confirmPassword });
 
     if (data?.password === data?.confirmPassword) {
@@ -76,9 +76,10 @@ function SignUp() {
           type='text'
           placeholder='Username'
           // value={username}
-          // defaultValue={username}
+          defaultValue={username}
           // onChange={(e) => setUsername(e.target.value)}
           {...register('username', {
+            onChange: (e) => setUsername(e.target.value),
             required: {
               value: true,
               message: 'Please fill up the Username field',
@@ -95,9 +96,10 @@ function SignUp() {
           type='email'
           placeholder='Email'
           // value={email}
-          // defaultValue={email}
+          defaultValue={email}
           // onChange={(e) => setEmail(e.target.value)}
           {...register('email', {
+            onChange: (e) => setEmail(e.target.value),
             required: {
               value: true,
               message: 'Please fill up the Email field',
@@ -115,9 +117,10 @@ function SignUp() {
             type={showPassword ? 'text' : 'password'}
             placeholder='Password'
             // value={password}
-            // defaultValue={password}
+            defaultValue={password}
             // onChange={(e) => setPassword(e.target.value)}
             {...register('password', {
+              onChange: (e) => setPassword(e.target.value),
               required: {
                 value: true,
                 message: 'Please fill up the Password field',
@@ -177,9 +180,10 @@ function SignUp() {
             type={showConfirmPassword ? 'text' : 'password'}
             placeholder='Confirm Password'
             // value={confirmPassword}
-            // defaultValue={confirmPassword}
+            defaultValue={confirmPassword}
             // onChange={(e) => setConfirmPassword(e.target.value)}
             {...register('confirmPassword', {
+              onChange: (e) => setConfirmPassword(e.target.value),
               required: {
                 value: true,
                 message: 'Please fill up the Confirm Password field',
