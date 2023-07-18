@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import AppointmentRow from './AppointmentRow';
 
 function Appointments() {
   const appointmentLists = [
@@ -36,13 +37,9 @@ function Appointments() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Littel, Schaden and Vandervort</td>
-              <td>12/16/2020</td>
-            </tr>
+            {appointmentLists?.map((a, idx) => (
+              <AppointmentRow key={idx} a={a} />
+            ))}
           </tbody>
         </table>
       </div>
