@@ -6,11 +6,10 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Country, State } from 'country-state-city';
 import profileImg from '../../assets/images/default_profile_avatar.png';
-import { FaUser } from 'react-icons/fa';
-import { AiOutlineMail } from 'react-icons/ai';
-import { BsCalendar2Date } from 'react-icons/bs';
 
 function Profile() {
+  const [avatar, setAvatar] = useState(`${profileImg}`);
+  const [avatarPreview, setAvatarPreview] = useState(`${profileImg}`);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -30,6 +29,23 @@ function Profile() {
     // resolver: zodResolver(loginSchema),
   });
 
+  const handleAvatar = (e) => {
+    const selectedFile = e.target.files[0];
+
+    if (selectedFile instanceof Blob) {
+      const reader = new FileReader();
+      reader.readAsDataURL(selectedFile);
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          setAvatarPreview(reader?.result);
+          setAvatar(reader?.result);
+        }
+      };
+    } else {
+      console.error('The selected file is not a valid Blob object.');
+    }
+  };
+
   const onSubmit = async (data) => {
     console.log(data);
     // setUsername(data?.username);
@@ -41,6 +57,7 @@ function Profile() {
     // setAddress(data?.address);
 
     const updatedData = {
+      avatar,
       username,
       email,
       phone,
@@ -68,30 +85,19 @@ function Profile() {
   }, [error, clearErrors]);
 
   return (
-    // <div className='container mx-auto my-4 p-4'>
-    //   <figure className='flex items-start sm:items-center'>
-    //     <div className='relative'>
-    //       <img
-    //         loading='lazy'
-    //         className='w-16 h-16 rounded-full mr-4'
-    //         src={user?.avatar ? user?.avatar?.url : profileImg.src}
-    //         alt={user?.name}
-    //       />
-    //     </div>
-    //     <figcaption>
-    //       <h5 className='font-semibold text-lg'>{user?.name}</h5>
-    //       <p>
-    //         <b>Email:</b> {user?.email} | <b>Joined On:</b>
-    //         {String(user?.createdAt).substr(0, 10)}
-    //       </p>
-    //     </figcaption>
-    //   </figure>
-    // </div>
     <div className='container mx-auto my-4 p-2 flex flex-col items-center'>
-      {/* <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider'>
-        Welcome!!
-      </h2> */}
+      <div className='flex flex-col items-center my-4'>
+        <img
+          loading='lazy'
+          className='w-32 h-32 rounded-full border-[1px] border-main'
+          srrc={user?.avatar?.url || avatarPreview || avatar || profileImg?.src}
+          alt={user?.username}
+        />
+      </div>
       <h2 className='text-md md:text-lg lg:text-xl font-semibold font-oswald text-gray tracking-widest my-2'>
+        Joined On: {String(user?.createdAt).substr(0, 10)}
+      </h2>
+      <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider mt-2 mb-4'>
         My Profile
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
@@ -220,7 +226,7 @@ function Profile() {
               },
             })}
           >
-            {console.log(country)}
+            {/* {console.log(country)} */}
             {State?.getStatesOfCountry(country).map((item) => (
               <option
                 key={item?.isoCode}
@@ -228,14 +234,13 @@ function Profile() {
                 // label={'State'}
                 placeholder={'State'}
               >
-                {console.log(item?.name)}
-                {console.log(item?.isoCode)}
+                {/* {console.log(item?.name)}
+                {console.log(item?.isoCode)} */}
                 {item?.name}
               </option>
             ))}
           </select>
         )}
-
         {/* City */}
         <input
           type='text'
@@ -284,6 +289,44 @@ function Profile() {
           })}
           className='input input-bordered border-main w-full my-2'
         />
+        {/* Avatar */}
+        <div className='flex items-center justify-center w-full my-2'>
+          <label
+            htmlFor='dropzone-file'
+            className='flex flex-col items-center justify-center w-full h-64 border-2 border-main border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600'
+          >
+            <div className='flex flex-col items-center justify-center pt-5 pb-6'>
+              <svg
+                className='w-8 h-8 mb-4 text-gray'
+                aria-hidden='true'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 20 16'
+              >
+                <path
+                  stroke='currentColor'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2'
+                />
+              </svg>
+              <p className='mb-2 text-xs sm:text-sm text-gray'>
+                <span className='font-semibold'>Click to upload Avatar </span>{' '}
+                or drag and drop
+              </p>
+              <p className='text-xs text-gray'>SVG, PNG, JPG or JPEG</p>
+            </div>
+            <input
+              id='dropzone-file'
+              type='file'
+              className='hidden'
+              onChange={handleAvatar}
+            />
+          </label>
+        </div>
+
+        {/* Error messages */}
         <p className='my-2 text-sm text-red-500 font-semibold'>
           {errors?.username?.type === 'required' && (
             <span>{errors?.username?.message}</span>
