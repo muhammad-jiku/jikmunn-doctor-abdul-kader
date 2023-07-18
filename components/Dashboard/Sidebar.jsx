@@ -42,7 +42,7 @@ function Sidebar() {
             Update Password
           </Link>
         </li>
-        <hr className='mb-2 border-2 border-slate-300' />
+        <hr className='my-2 border-2 border-slate-300' />
         {user?.role === 'admin' && (
           <>
             <li>

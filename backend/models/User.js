@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
+      minLength: [3, 'Your username must be longer than 3 characters'],
       required: [true, 'Please enter your username'],
     },
     email: {
@@ -30,6 +31,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       // maxLength: [30, 'Phone cannot exceed 30 characters'],
       minLength: [11, 'Invalid phone number'],
+      maxLength: [14, 'Invalid phone number'],
     },
     country: {
       type: String,
