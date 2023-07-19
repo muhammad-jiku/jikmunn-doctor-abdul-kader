@@ -48,7 +48,7 @@ function Sidebar() {
 
           <li>
             <Link
-              href='/admin/products'
+              href='/dashboard/admin/services'
               className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Services
