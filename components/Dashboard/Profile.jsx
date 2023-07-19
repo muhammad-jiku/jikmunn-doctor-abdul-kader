@@ -91,9 +91,9 @@ function Profile() {
           loading='lazy'
           className='w-32 h-32 rounded-full border-[1px] border-main'
           src={
-            user?.avatar?.url
+            user?.avatar?.url?.length > 0
               ? user?.avatar?.url
-              : avatarPreview || avatar || profileImg?.src
+              : avatarPreview || profileImg?.src
           }
           alt={user?.username}
         />

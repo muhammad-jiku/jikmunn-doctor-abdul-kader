@@ -54,6 +54,23 @@ function Sidebar() {
               All Services
             </Link>
           </li>
+          <li>
+            <Link
+              href='/admin/products/new'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              New Price
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              href='/admin/products'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              All Prices
+            </Link>
+          </li>
 
           <li>
             <Link
