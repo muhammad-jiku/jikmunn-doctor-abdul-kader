@@ -23,3 +23,4 @@ export { default as AllServices } from './Dashboard/Admin/Services/AllServices';
 export { default as NewPrice } from './Dashboard/Admin/Prices/NewPrice';
 export { default as AllPrices } from './Dashboard/Admin/Prices/AllPrices';
 export { default as AllUsers } from './Dashboard/Admin/Users/AllUsers';
+export { default as AllAppointments } from './Dashboard/Admin/Appoinments/AllAppointments';
