@@ -74,7 +74,7 @@ function Sidebar() {
 
           <li>
             <Link
-              href='/admin/users'
+              href='/dashboard/admin/users'
               className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Users
@@ -83,7 +83,7 @@ function Sidebar() {
 
           <li>
             <Link
-              href='/admin/orders'
+              href='/dashboard/admin/appointments'
               className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Appointments
@@ -92,7 +92,7 @@ function Sidebar() {
 
           <li>
             <Link
-              href='/admin/orders'
+              href='/dashboard/admin/reviews'
               className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Reviews
