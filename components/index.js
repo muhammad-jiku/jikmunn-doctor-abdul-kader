@@ -18,4 +18,5 @@ export { default as Sidebar } from './Dashboard/Sidebar';
 export { default as Profile } from './Dashboard/Profile';
 export { default as UpdatePassword } from './Dashboard/UpdatePassword';
 export { default as MyAppointments } from './Dashboard/User/MyAppointments';
+export { default as NewService } from './Dashboard/Admin/NewService';
 export { default as NewPrice } from './Dashboard/Admin/NewPrice';
