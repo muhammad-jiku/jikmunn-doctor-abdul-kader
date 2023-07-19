@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import ServicesRow from './ServicesRow';
+import PricesRow from './PricesRow';
 
-function AllServices() {
+function AllPrices() {
   const appointmentLists = [
     {
       id: '01',
@@ -22,7 +22,7 @@ function AllServices() {
   return (
     <div className='container mx-auto my-4 p-2 flex flex-col items-center'>
       <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider mt-2 mb-4'>
-        All Services
+        All Prices
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
       <div className='overflow-x-auto my-2 w-full'>
@@ -38,7 +38,7 @@ function AllServices() {
           </thead>
           <tbody>
             {appointmentLists?.map((a, idx) => (
-              <ServicesRow key={idx} a={a} />
+              <PricesRow key={idx} a={a} />
             ))}
           </tbody>
         </table>
@@ -47,4 +47,4 @@ function AllServices() {
   );
 }
 
-export default AllServices;
+export default AllPrices;
