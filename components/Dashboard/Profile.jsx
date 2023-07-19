@@ -90,7 +90,11 @@ function Profile() {
         <img
           loading='lazy'
           className='w-32 h-32 rounded-full border-[1px] border-main'
-          srrc={user?.avatar?.url || avatarPreview || avatar || profileImg?.src}
+          src={
+            user?.avatar?.url
+              ? user?.avatar?.url
+              : avatarPreview || avatar || profileImg?.src
+          }
           alt={user?.username}
         />
       </div>

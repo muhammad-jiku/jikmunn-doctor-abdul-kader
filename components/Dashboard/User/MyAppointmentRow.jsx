@@ -3,7 +3,7 @@
 import React from 'react';
 import { AiOutlineEdit, AiFillDelete } from 'react-icons/ai';
 
-function AppointmentRow({ a }) {
+function MyAppointmentRow({ a }) {
   return (
     <tr>
       <th>{a?.id}</th>
@@ -28,4 +28,4 @@ function AppointmentRow({ a }) {
   );
 }
 
-export default AppointmentRow;
+export default MyAppointmentRow;

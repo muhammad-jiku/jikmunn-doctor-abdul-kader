@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import AppointmentRow from './AppointmentRow';
+import MyAppointmentRow from './MyAppointmentRow';
 
-function Appointments() {
+function MyAppointments() {
   const appointmentLists = [
     {
       id: '01',
@@ -38,7 +38,7 @@ function Appointments() {
           </thead>
           <tbody>
             {appointmentLists?.map((a, idx) => (
-              <AppointmentRow key={idx} a={a} />
+              <MyAppointmentRow key={idx} a={a} />
             ))}
           </tbody>
         </table>
@@ -47,4 +47,4 @@ function Appointments() {
   );
 }
 
-export default Appointments;
+export default MyAppointments;

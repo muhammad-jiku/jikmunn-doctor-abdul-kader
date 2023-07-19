@@ -1,5 +1,5 @@
 import React from 'react';
-import { Appointments } from '@/components';
+import { MyAppointments } from '@/components';
 
 export const metadata = {
   title: 'My Appointments - Dr. Abdul Kader',
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Page() {
   return (
     <>
-      <Appointments />
+      <MyAppointments />
     </>
   );
 }

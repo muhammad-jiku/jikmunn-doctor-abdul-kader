@@ -35,54 +35,54 @@ function Sidebar() {
           </Link>
         </li>
         <hr className='my-2 border-2 border-slate-300' />
-        {user?.role === 'admin' && (
-          <>
-            <li>
-              <Link
-                href='/admin/products/new'
-                className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
-              >
-                New Service
-              </Link>
-            </li>
+        {/* {user?.role === 'admin' && ( */}
+        <>
+          <li>
+            <Link
+              href='/admin/products/new'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              New Service
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                href='/admin/products'
-                className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
-              >
-                All Services
-              </Link>
-            </li>
+          <li>
+            <Link
+              href='/admin/products'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              All Services
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                href='/admin/users'
-                className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
-              >
-                All Users
-              </Link>
-            </li>
+          <li>
+            <Link
+              href='/admin/users'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              All Users
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                href='/admin/orders'
-                className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
-              >
-                All Appointments
-              </Link>
-            </li>
+          <li>
+            <Link
+              href='/admin/orders'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              All Appointments
+            </Link>
+          </li>
 
-            <li>
-              <Link
-                href='/admin/orders'
-                className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
-              >
-                All Reviews
-              </Link>
-            </li>
-          </>
-        )}
+          <li>
+            <Link
+              href='/admin/orders'
+              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            >
+              All Reviews
+            </Link>
+          </li>
+        </>
+        {/* )} */}
       </ul>
     </aside>
   );
