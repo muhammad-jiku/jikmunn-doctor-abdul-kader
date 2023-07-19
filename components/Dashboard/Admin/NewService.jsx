@@ -2,12 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 
-function NewPrice() {
+function NewService() {
+  const [id, setId] = useState('');
   const [title, setTitle] = useState('');
-  const [subtitle, setSubtitle] = useState('');
-  const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
 
   const {
@@ -29,19 +27,18 @@ function NewPrice() {
     // setCity(data?.city);
     // setAddress(data?.address);
 
-    const priceData = {
+    const serviceData = {
+      id,
       title,
-      subtitle,
-      price,
       description,
     };
 
-    console.log(priceData);
+    console.log(serviceData);
   };
 
   useEffect(() => {
     if (isSubmitSuccessful) {
-      toast.success('Price tag added successfully!!');
+      toast.success('Service added successfully!!');
       reset();
     }
   }, [isSubmitSuccessful, reset]);
@@ -49,10 +46,34 @@ function NewPrice() {
   return (
     <div className='container mx-auto my-4 p-2 flex flex-col items-center'>
       <h2 className='text-3xl lg:text-5xl font-bold font-lobster text-main tracking-wider mt-2 mb-4'>
-        Add Price Tag
+        Add Service
       </h2>
       <hr className='w-1/3 lg:w-1/4 mb-2 border-2 border-slate-300' />
       <form className='p-1 md:p-4 w-full' onSubmit={handleSubmit(onSubmit)}>
+        {/* ID */}
+        <input
+          type='text'
+          placeholder='ID'
+          // value={id}
+          defaultValue={id}
+          // onChange={(e) => setId(e.target.value)}
+          {...register('id', {
+            onChange: (e) => setId(e.target.value),
+            required: {
+              value: true,
+              message: 'Please fill up the ID field',
+            },
+            minLength: {
+              value: 2,
+              message: 'ID number must be at least two characters',
+            },
+            maxLength: {
+              value: 4,
+              message: 'ID number must not exceed four characters',
+            },
+          })}
+          className='input input-bordered border-main w-full my-2'
+        />
         {/* Title */}
         <input
           type='text'
@@ -69,42 +90,6 @@ function NewPrice() {
             minLength: {
               value: 3,
               message: 'Title must be at least three characters',
-            },
-          })}
-          className='input input-bordered border-main w-full my-2'
-        />
-        {/* Subtitle */}
-        <input
-          type='text'
-          placeholder='Subtitle'
-          // value={subtitle}
-          defaultValue={subtitle}
-          // onChange={(e) => setSubtitle(e.target.value)}
-          {...register('subtitle', {
-            onChange: (e) => setSubtitle(e.target.value),
-          })}
-          className='input input-bordered border-main w-full my-2'
-        />
-        {/* Price */}
-        <input
-          type='number'
-          placeholder='Price'
-          // value={price}
-          defaultValue={price}
-          // onChange={(e) => setPrice(e.target.value)}
-          {...register('price', {
-            onChange: (e) => setPrice(e.target.value),
-            required: {
-              value: true,
-              message: 'Please fill up the Price field',
-            },
-            minLength: {
-              value: 2,
-              message: 'Price must be at least two characters',
-            },
-            maxLength: {
-              value: 4,
-              message: 'Price must be not exceed 4 characters',
             },
           })}
           className='input input-bordered border-main w-full my-2'
@@ -129,7 +114,6 @@ function NewPrice() {
           })}
           className='input input-bordered border-main w-full my-2'
         />
-
         {/* Image */}
         <div className='flex items-center justify-center w-full my-2'>
           <label
@@ -164,6 +148,21 @@ function NewPrice() {
 
         {/* Error messages */}
         <p className='my-2 text-sm text-red-500 font-semibold'>
+          {errors?.id?.type === 'required' && (
+            <span>{errors?.id?.message}</span>
+          )}
+        </p>
+        <p className='my-2 text-sm text-red-500 font-semibold'>
+          {errors?.id?.type === 'minLength' && (
+            <span>{errors?.id?.message}</span>
+          )}
+        </p>
+        <p className='my-2 text-sm text-red-500 font-semibold'>
+          {errors?.id?.type === 'maxLength' && (
+            <span>{errors?.id?.message}</span>
+          )}
+        </p>
+        <p className='my-2 text-sm text-red-500 font-semibold'>
           {errors?.title?.type === 'required' && (
             <span>{errors?.title?.message}</span>
           )}
@@ -171,21 +170,6 @@ function NewPrice() {
         <p className='my-2 text-sm text-red-500 font-semibold'>
           {errors?.title?.type === 'minLength' && (
             <span>{errors?.title?.message}</span>
-          )}
-        </p>
-        <p className='my-2 text-sm text-red-500 font-semibold'>
-          {errors?.price?.type === 'required' && (
-            <span>{errors?.price?.message}</span>
-          )}
-        </p>
-        <p className='my-2 text-sm text-red-500 font-semibold'>
-          {errors?.price?.type === 'minLength' && (
-            <span>{errors?.price?.message}</span>
-          )}
-        </p>
-        <p className='my-2 text-sm text-red-500 font-semibold'>
-          {errors?.price?.type === 'maxLength' && (
-            <span>{errors?.price?.message}</span>
           )}
         </p>
         <p className='my-2 text-sm text-red-500 font-semibold'>
@@ -203,7 +187,7 @@ function NewPrice() {
           <input
             type='submit'
             className='btn bg-main text-white hover:bg-white hover:text-main hover:border-main uppercase'
-            value='add price'
+            value='add service'
           />
         </div>
       </form>
@@ -211,4 +195,4 @@ function NewPrice() {
   );
 }
 
-export default NewPrice;
+export default NewService;
