@@ -13,7 +13,7 @@ function Sidebar() {
         <li>
           <Link
             href='/me'
-            className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
           >
             My Profile
           </Link>
@@ -21,7 +21,7 @@ function Sidebar() {
         <li>
           <Link
             href='/dashboard/me/appointments'
-            className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
           >
             My Appointments
           </Link>
@@ -29,7 +29,7 @@ function Sidebar() {
         <li>
           <Link
             href='/dashboard/me/update-password'
-            className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+            className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
           >
             Update Password
           </Link>
@@ -40,7 +40,7 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/products/new'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               New Service
             </Link>
@@ -49,15 +49,15 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/products'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Services
             </Link>
           </li>
           <li>
             <Link
-              href='/admin/products/new'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              href='/dashboard/admin/new/price'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               New Price
             </Link>
@@ -66,7 +66,7 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/products'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Prices
             </Link>
@@ -75,7 +75,7 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/users'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Users
             </Link>
@@ -84,7 +84,7 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/orders'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Appointments
             </Link>
@@ -93,7 +93,7 @@ function Sidebar() {
           <li>
             <Link
               href='/admin/orders'
-              className='block px-3 py-2 text-gray-800 hover:bg-blue-100 hover:text-main rounded-md'
+              className='block px-3 py-2 text-gray hover:bg-blue-100 hover:text-main rounded-md'
             >
               All Reviews
             </Link>
