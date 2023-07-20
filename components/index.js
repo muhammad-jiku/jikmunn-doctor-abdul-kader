@@ -21,6 +21,7 @@ export { default as MyAppointments } from './Dashboard/User/MyAppointments';
 export { default as NewService } from './Dashboard/Admin/Services/NewService';
 export { default as AllServices } from './Dashboard/Admin/Services/AllServices';
 export { default as NewPrice } from './Dashboard/Admin/Prices/NewPrice';
+export { default as UpdatePrice } from './Dashboard/Admin/Prices/UpdatePrice';
 export { default as AllPrices } from './Dashboard/Admin/Prices/AllPrices';
 export { default as AllUsers } from './Dashboard/Admin/Users/AllUsers';
 export { default as AllAppointments } from './Dashboard/Admin/Appoinments/AllAppointments';
