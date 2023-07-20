@@ -19,6 +19,7 @@ export { default as Profile } from './Dashboard/Profile';
 export { default as UpdatePassword } from './Dashboard/UpdatePassword';
 export { default as MyAppointments } from './Dashboard/User/MyAppointments';
 export { default as NewService } from './Dashboard/Admin/Services/NewService';
+export { default as UpdateService } from './Dashboard/Admin/Services/UpdateService';
 export { default as AllServices } from './Dashboard/Admin/Services/AllServices';
 export { default as NewPrice } from './Dashboard/Admin/Prices/NewPrice';
 export { default as UpdatePrice } from './Dashboard/Admin/Prices/UpdatePrice';
