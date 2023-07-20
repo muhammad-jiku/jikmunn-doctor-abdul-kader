@@ -1,5 +1,6 @@
 export { default as Navbar } from './Shared/Navbar';
 export { default as Loader } from './Shared/Loader';
+export { default as ErrorState } from './Shared/ErrorState';
 export { default as EmptyState } from './Shared/EmptyState';
 export { default as CustomBanner } from './Shared/CustomBanner';
 export { default as CustomServiceCard } from './Shared/CustomServiceCard';
