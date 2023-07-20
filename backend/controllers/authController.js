@@ -1,5 +1,6 @@
 import User from '../models/User';
 import fs from 'fs';
+import { uploads } from '../utils/cloudinaryFile';
 
 // create account
 export const registerUser = async (req, res) => {
@@ -42,7 +43,17 @@ export const updateProfile = async (req, res) => {
       address,
     };
 
-    //
+    if (req.files.length > 0) {
+      const uploader = async (path) =>
+        await uploads(path, 'jikmunn-doctor-abdul-kader/avatars');
+
+      const file = req.files[0];
+      const { path } = file;
+
+      const avatarResponse = await uploader(path);
+      fs.unlinkSync(path);
+      newUserData.avatar = avatarResponse;
+    }
 
     const user = await User.findByIdAndUpdate(req.user._id, newUserData);
 
