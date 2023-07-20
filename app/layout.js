@@ -1,6 +1,8 @@
-import { Navbar, Footer } from '@/components';
+import React, { Suspense } from 'react';
 import '../styles/globals.css';
 import { GlobalProvider } from '@/provider/GlobalProvider';
+import { Navbar, Footer } from '@/components';
+import Loading from './loading';
 
 export const metadata = {
   title: 'Dr. Abdul Kader',
@@ -13,7 +15,15 @@ export default function RootLayout({ children }) {
       <body className='flex flex-col min-h-screen overflow-x-hidden'>
         <GlobalProvider>
           <Navbar />
-          {children}
+          <Suspense
+            fallback={
+              <>
+                <Loading />
+              </>
+            }
+          >
+            {children}
+          </Suspense>
           <Footer />
         </GlobalProvider>
       </body>
