@@ -30,8 +30,16 @@ export const registerUser = async (req, res) => {
 // update profile
 export const updateProfile = async (req, res) => {
   try {
-    const { avatar, username, email, phone, country, state, city, address } =
-      await req.body;
+    const {
+      // avatar,
+      username,
+      email,
+      phone,
+      country,
+      state,
+      city,
+      address,
+    } = await req.body;
 
     const newUserData = await {
       username: username.toLowerCase(),
